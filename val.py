@@ -6,7 +6,7 @@ model = YOLO('yolov8n-seg.pt')  # load an official model
 model = YOLO(cmm.get_pva_yolo_home() + '/best.pt')  # load a custom model
 
 # Validate the model
-metrics = model.val()  # no arguments needed, dataset and settings remembered
+metrics = model.val(workers=0)  # no arguments needed, dataset and settings remembered
 metrics.box.map    # map50-95(B)
 metrics.box.map50  # map50(B)
 metrics.box.map75  # map75(B)
